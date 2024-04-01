@@ -23,3 +23,6 @@ COPY etc/infrastructure/php/ /usr/local/etc/php/
 RUN mkdir -p /opt/home
 RUN chmod 777 /opt/home
 ENV HOME /opt/home
+
+# Instala las dependencias de Composer
+RUN composer install --no-interaction --prefer-dist --optimize-autoloader
